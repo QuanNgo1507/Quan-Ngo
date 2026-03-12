@@ -1,13 +1,13 @@
-for i in range (111,16,-2):
-    print(i)
-
-print("Các số nguyên tố từ 17 đến 111 là:")
-
-for n in range(17, 112):
-    so_nguyen_to = True
-    for i in range(2, int(n ** 0.5) + 1):
-        if n % i == 0:
-            so_nguyen_to = False
-            break
-    if so_nguyen_to:
-        print(n, end=" ")
+danh_sach_lop = {
+    "Nguyen Van A": 9.5,
+    "nguyen Van B":7.5,
+    "Nguyen Van C": 8.0
+}
+def tinh_diem_trung_binh(data_dict):
+    if not data_dict:
+        return 0
+    Tong_Diem=sum(data_dict.values())
+    So_Luong_SV=len(data_dict.keys())
+    return Tong_Diem / So_Luong_SV
+dtb = tinh_diem_trung_binh(danh_sach_lop)
+print(f"Diem trung Binh cua {len(danh_sach_lop)} sinh vien la {dtb:.2f}")

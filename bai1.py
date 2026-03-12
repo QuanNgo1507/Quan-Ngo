@@ -1,23 +1,12 @@
-a = float(input("Nhập hệ số a: "))
-b = float(input("Nhập hệ số b: "))
-c = float(input("Nhập hệ số c: "))
-so_lon_nhat = max(a, b, c)
-so_nho_nhat = min(a, b, c)
-print(f"Số lớn nhất là: {so_lon_nhat}")
-print(f"Số nhỏ nhất là: {so_nho_nhat}")
-
-import math
-def giai_phuong_trinh_bac_2(a, b, c):
-    if a == 0:
-        return "Hệ số a phải khác 0!"
-    delta = b ** 2 - 4 * a * c
-    if delta < 0:
-        return "Phương trình vô nghiệm"
-    elif delta == 0:
-        x = -b / (2 * a)
-        return f"Phương trình có nghiệm kép x = {x}"
-    else:
-        x1 = (-b + math.sqrt(delta)) / (2 * a)
-        x2 = (-b - math.sqrt(delta)) / (2 * a)
-        return f"Phương trình có 2 nghiệm: x1 = {x1}, x2 = {x2}"
-print(giai_phuong_trinh_bac_2(1,4,3))
+def thong_ke_tuple(number):
+    if not number:
+        return 0, None, None
+    tong=sum(number)
+    lon_nhat=max(number)
+    nho_nhat=min(number)
+    return tong, lon_nhat, nho_nhat
+my_tuple=(10,25,5,40,30)
+tong, max_val, min_val = thong_ke_tuple(my_tuple)
+print(f"Tong: {tong}")
+print(f"Gia Tri Lon Nhat: {max_val}")
+print(f"gia Tri Nho Nhat: {min_val}")
